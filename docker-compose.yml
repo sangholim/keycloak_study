@@ -9,7 +9,7 @@ services:
     image: postgres
     volumes:
       #- postgres_data:/var/lib/postgresql/data
-      - ./dump/db-backup-17-11-22.sql:/docker-entrypoint-initdb.d/db-backup-17-11-22.sql
+      - ./dump/db-backup-19-11-22.sql:/docker-entrypoint-initdb.d/db-backup-19-11-22.sql
     ports:
       - 5432:5432
     environment:
