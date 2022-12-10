@@ -1,0 +1,2 @@
+FROM postgres
+COPY ./postgresql/dump/db-backup-19-11-22.sql /docker-entrypoint-initdb.d/
