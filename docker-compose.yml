@@ -6,10 +6,8 @@ volumes:
 
 services:
   postgres:
-    image: postgres
-    volumes:
-      #- postgres_data:/var/lib/postgresql/data
-      - ./dump/db-backup-19-11-22.sql:/docker-entrypoint-initdb.d/db-backup-19-11-22.sql
+    build:
+      dockerfile: ./postgresql/docker/DockerFile
     ports:
       - 5432:5432
     environment:
@@ -19,7 +17,7 @@ services:
     restart: always
   keycloak:
     build:
-      dockerfile: ./docker/DockerFile
+      dockerfile: keycloak/DockerFile
     #image: quay.io/keycloak/keycloak:latest
     environment:
       KC_DB: postgres
